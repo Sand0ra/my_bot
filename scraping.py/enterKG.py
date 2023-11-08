@@ -14,8 +14,8 @@ def choose_category(choise):
         link_link = computer_case
         print("Вы выбрали Корпус для ПК")
     elif choise == 4:
-        link_link = buffer
-        print("Вы выбрали Колонки")
+        link_link = oper_memory
+        print("Вы выбрали Оперативную память")
     elif choise == 5:
         link_link = hdd_ccd_memory
         print("Вы выбрали Память для ПК")
@@ -23,15 +23,16 @@ def choose_category(choise):
         link_link = videocard
         print("Вы выбрали Видеокарты")
     elif choise == 7:
-        link_link = mouse
-        print("Вы выбрали Мышки")
+        link_link = procecor
+        print("Вы выбрали Процессоры")
     elif choise == 8:
-        link_link = keyboard
-        print("Вы выбрали Клавиатуры")
+        link_link = motherboard
+        print("Вы выбрали Материнскую плату")
     elif choise == 9:
         link_link = power_block
         print("Вы выбрали Блоки питания для ПК")
     return link_link
+
 
 def scrape_data(link_link):
     response = requests.get(link_link)
