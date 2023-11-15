@@ -5,20 +5,19 @@ import time
 import random
 
 
-headers = {
-    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.837 YaBrowser/23.9.4.837 Yowser/2.5 Safari/537.36'
-           }
-
-
 
 list_name = []
 list_price = []
 list_url = []
 
+
 random_delay = random.uniform(1,10)
 def scrape_UltraKG(user_choise):
+    list_name.clear()
+    list_price.clear()
+    list_url.clear()
     print('Процесс парсинга сайта UltraKG начался')
-    response = requests.get(user_choise, headers=headers)
+    response = requests.get(user_choise)
     content = response.content
     time.sleep(4)
     soup = BeautifulSoup(content, 'html.parser')

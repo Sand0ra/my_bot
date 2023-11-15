@@ -1,7 +1,6 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.filters.callback_data import CallbackData
-from enterKG import lst_urls
 from links import *
 
 btn_next_config_1 = InlineKeyboardButton(
@@ -114,11 +113,11 @@ button_norex.row(btn_back_config,btn_next_componet,width=2)
 
 btn_monitor = InlineKeyboardButton(
     text='Монитор',
-    callback_data='monitor'
+    callback_data='btn_monitor'
 )
 btn_computer_case = InlineKeyboardButton(
     text='Корпус',
-    callback_data='computer_case'
+    callback_data='btn_computer_case'
 )
 btn_procecor = InlineKeyboardButton(
     text='Процессор',
@@ -145,10 +144,6 @@ btn_videocard = InlineKeyboardButton(
     callback_data='btn_videocard'
 )
 
-btn_back_config = InlineKeyboardButton(
-    text='Назад',
-    callback_data='back_to_configuration'
-)
 
 button_select_components = InlineKeyboardBuilder()
 button_select_components.row(btn_videocard,btn_oper_memory,btn_monitor,btn_computer_case,
@@ -190,11 +185,11 @@ btn_videocard_2 = InlineKeyboardButton(
     callback_data='btn_videocard_2'
 )
 
-btn_back_config = InlineKeyboardButton(
-    text='Назад',
-    callback_data='back_to_configuration_2'
-)
 
+btn_next_component = InlineKeyboardButton(
+    text='Дальше',
+    callback_data='next_component_2'
+)
 button_select_components_2 = InlineKeyboardBuilder()
 button_select_components_2.row(btn_videocard_2,btn_oper_memory_2,btn_monitor_2,btn_computer_case_2,
                              btn_procecor_2,btn_hdd_ccd_memory_2,btn_power_block_2,btn_motherboard_2,btn_back_config,width=2)

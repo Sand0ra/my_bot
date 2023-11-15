@@ -17,6 +17,9 @@ lst_urls = []
 random_delay = random.uniform(1,10)
 def scrape_enterKG(user_choice):
     print('Процесс парсинга сайта EnterKG начался')
+    lst_names.clear()  
+    lst_prices.clear()
+    lst_urls.clear()
     response = requests.get(user_choice)
     content = response.content
     time.sleep(random_delay)

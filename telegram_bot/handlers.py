@@ -115,8 +115,6 @@ async def full_pc_press(callback: CallbackQuery):
         text='Отлично теперь \nВыберите конфигурацию',
         reply_markup=select_configuration.as_markup()
     )
-        
-
     @router.callback_query(F.data == 'next_setup_2')
     async def next_press(callback: CallbackQuery):
         await callback.message.answer('https://qptr.ru/6Cod \n Игровой компьютер на базе Intel i5',
@@ -234,13 +232,7 @@ async def motherboard_press(callback: CallbackQuery):
     del lst_prices[0], lst_urls[0], lst_names[0]
 
 
-
-
-
-
-
-
-    
+ 
 @router.callback_query(F.data == 'next_component')
 async def next_press(callback: CallbackQuery):
     await callback.message.edit_text(text=f'<i>{lst_names[0]}</i>\n\n<b>Цена:</b> <i>{lst_prices[0]}</i> 🔥🔥🔥\n{lst_urls[0]}',
@@ -260,16 +252,105 @@ async def next_press(callback: CallbackQuery):
 
 
 
-
-
-
-
-
-
-
-
-
 @router.callback_query(F.data == 'Ultra.KG_2')
 async def back_press(callback: CallbackQuery):
     await callback.message.answer(text='С какого компонента вы предпочли бы начать свое погружение в мир сборки ПК?',
-    reply_markup=button_select_components.as_markup())
+    reply_markup=button_select_components_2.as_markup())
+    
+    
+    @router.callback_query(F.data == 'btn_videocard_2')
+    async def videocard_press(callback: CallbackQuery):
+        await callback.message.answer('Подождите идет парсинг данных...')
+        scrape_UltraKG(videocard_2)
+        await callback.message.answer(text=f'<i>{list_name[0]}</i>\n\n<b>Цена</b> <i>{list_price[0]}</i> 🔥🔥🔥\n{list_url[0]}',
+                                    parse_mode='HTML',
+                                    reply_markup=next_to_ultraKG.as_markup())
+        time.sleep(2) 
+        del list_price[0], list_url[0], list_name[0]
+
+    @router.callback_query(F.data == 'btn_monitor_2')
+    async def monitor_press(callback: CallbackQuery):
+        await callback.message.answer('Подождите идет парсинг данных...')
+        scrape_UltraKG(monitor_2)
+        await callback.message.answer(text=f'<i>{list_name[0]}</i>\n\n<b>Цена</b> <i>{list_price[0]}</i> 🔥🔥🔥\n{list_url[0]}',
+                                    parse_mode='HTML',
+                                    reply_markup=next_to_ultraKG.as_markup())
+        time.sleep(2) 
+        del list_price[0], list_url[0], list_name[0]
+        
+        
+    @router.callback_query(F.data == 'btn_computer_case_2')
+    async def comp_case_press(callback: CallbackQuery):
+        await callback.message.answer('Подождите идет парсинг данных...')
+        scrape_UltraKG(computer_case_2)
+        await callback.message.answer(text=f'<i>{list_name[0]}</i>\n\n<b>Цена</b> <i>{list_price[0]}</i> 🔥🔥🔥\n{list_url[0]}',
+                                    parse_mode='HTML',
+                                    reply_markup=next_to_ultraKG.as_markup())
+        time.sleep(2) 
+        del list_price[0], list_url[0], list_name[0]
+
+    @router.callback_query(F.data == 'btn_procecor_2')
+    async def procecor_press(callback: CallbackQuery):
+        await callback.message.answer('Подождите идет парсинг данных...')
+        scrape_UltraKG(procecor_2)
+        await callback.message.answer(text=f'<i>{list_name[0]}</i>\n\n<b>Цена</b> <i>{list_price[0]}</i> 🔥🔥🔥\n{list_url[0]}',
+                                    parse_mode='HTML',
+                                    reply_markup=next_to_ultraKG.as_markup())
+        time.sleep(2) 
+        del list_price[0], list_url[0], list_name[0]
+
+
+    @router.callback_query(F.data == 'btn_hdd_ccd_memory_2')
+    async def hdd_ccd_press(callback: CallbackQuery):
+        await callback.message.answer('Подождите идет парсинг данных...')
+        scrape_UltraKG(hdd_ccd_memory_2)
+        await callback.message.answer(text=f'<i>{list_name[0]}</i>\n\n<b>Цена</b> <i>{list_price[0]}</i> 🔥🔥🔥\n{list_url[0]}',
+                                    parse_mode='HTML',
+                                    reply_markup=next_to_ultraKG.as_markup())
+        time.sleep(2) 
+        del list_price[0], list_url[0], list_name[0]
+
+
+    @router.callback_query(F.data == 'btn_power_block_2')
+    async def power_block_press(callback: CallbackQuery):
+        await callback.message.answer('Подождите идет парсинг данных...')
+        scrape_UltraKG(power_block_2)
+        await callback.message.answer(text=f'<i>{list_name[0]}</i>\n\n<b>Цена</b> <i>{list_price[0]}</i> 🔥🔥🔥\n{list_url[0]}',
+                                    parse_mode='HTML',
+                                    reply_markup=next_to_ultraKG.as_markup())
+        time.sleep(2) 
+        del list_price[0], list_url[0], list_name[0]
+
+
+
+    @router.callback_query(F.data == 'btn_oper_memory_2')
+    async def oper_memory_press(callback: CallbackQuery):
+        await callback.message.answer('Подождите идет парсинг данных...')
+        scrape_UltraKG(oper_memory_2)
+        await callback.message.answer(text=f'<i>{list_name[0]}</i>\n\n<b>Цена</b> <i>{list_price[0]}</i> 🔥🔥🔥\n{list_url[0]}',
+                                    parse_mode='HTML',
+                                    reply_markup=next_to_ultraKG.as_markup())
+        time.sleep(2) 
+        del list_price[0], list_url[0], list_name[0]
+
+
+    @router.callback_query(F.data == 'btn_motherboard_2')
+    async def motherboard_press(callback: CallbackQuery):
+        await callback.message.answer('Подождите идет парсинг данных...')
+        scrape_UltraKG(motherboard_2)
+        await callback.message.answer(text=f'<i>{list_name[0]}</i>\n\n<b>Цена</b> <i>{list_price[0]}</i> 🔥🔥🔥\n{list_url[0]}',
+                                    parse_mode='HTML',
+                                    reply_markup=next_to_ultraKG.as_markup())
+        time.sleep(2) 
+        del list_price[0], list_url[0], list_name[0]
+
+
+
+    @router.callback_query(F.data == 'next_to_ultraKG')
+    async def next_press(callback: CallbackQuery):
+        await callback.message.edit_text(text=f'<i>{list_name[0]}</i>\n\n<b>Цена:</b> <i>{list_price[0]}</i> 🔥🔥🔥\n{list_url[0]}',
+                                    parse_mode='HTML',
+                                    reply_markup=next_to_ultraKG.as_markup()
+                                    )
+        time.sleep(2) 
+        del list_price[0], list_url[0], list_name[0]     
