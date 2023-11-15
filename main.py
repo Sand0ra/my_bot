@@ -2,15 +2,19 @@ import asyncio
 import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
-from handlers.handlers import router
-from handlers.handlers import router
-from handlers.config import TOKEN
+
+
+from handlers import router
+from config import TOKEN
 import sys
 
 
 
-
 logging.basicConfig(level=logging.INFO)
+
+
+
+
 
 
 
@@ -24,8 +28,7 @@ async def main():
     dp = Dispatcher()
     dp.include_router(router=router)
     await dp.start_polling(bot)
-
-
+    
 
 
 
